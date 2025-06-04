@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Marlon Vinicius</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #2c3e50;
+        }
+
+        /* Tela de abertura */
+        #landig {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffffff;
+            flex-direction: column;
+            opacity: 1;
+            transition: opacity 0.8s ease;  
+        }
+
+        
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Tela de Abertura -->
+     <div id="landing">
+        <h1>Marlon Vinicius</h1>
+     </div>
+
+    <!-- Conteúdo principal -->
+     <div>
+        
+        <header>
+
+            <h1>Marlon Vinicius</h1>
+            <p class="subtitulo">Desenvolvedor em Formação</p>
+
+        </header>
+
+        <section>
+
+            <h2>Sobre Mim</h2>
+            <p>Atualmente moro em Goioerê-PR. Gosto de treinar, jogar, e nesses últimos tempos descobri que gosto muito de programar. Comecei há pouco tempo por conta do trabalho. A princípio, esse não era o ramo que pensava seguir, mas como tudo na vida é uma caixinha de surpresas, comecei e gostei muito da área.</p>
+
+        </section>
+
+        <section class="habilidades">
+
+            <h2>habilidades</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+                    <p>HTML</p>
+                </div>
+
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+                    <p>CSS</p>
+                </div>
+
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    <p>JavaScript</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="projetos">
+
+            <h2>Meus Projetos</h2>
+
+            <div class="projetos-card">
+
+                <h3>Página Pessoal</h3>
+                <p>Minha primeira página web criada com HTML e CSS. Aprendi sobre estruturação de conteúdo e estilização.</p>
+                <p><strong>Tecnologias:</strong>HTML, CSS e JavaScript</p>
+                <a href="#">Ver Projetos</a>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Contato</h2>
+            <a href="mailto:marlonvini2017@gmail.com" style="font-weight: bold; color: #2c3e50;">Entre em contato</a>
+
+        </section>
+
+        <footer>
+
+            <p>© 2025 Marlon Vinicius • Desenvolvedor em Formação</p>
+
+            <div class="redes">
+
+                <a href="https://github.com/Skyuzu15" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/marlon-vinicius-46a257327/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+                </a>
+
+            </div>
+
+        </footer>
+
+     </div>
+
+     <!-- Script de transição automática -->
+      <script>
+        // Espera 3 segundos e faz a transição
+        window.onload = () => {
+            setTimeout(() => {
+                const landing = document.getElementById("landing");
+                const main = document.getElementById("mainContent");
+
+                landing.style.opacity = 0;
+
+                setTimeout(() => {
+                    landing.style.display = "none";
+                    main.style.display = "block";
+                }, 800); // espera o fade-out terminar
+            }, 3000); // tempo visível da tela de abertura (3 segundos)
+        };
+      </script>
+
+</body>
+</html>
