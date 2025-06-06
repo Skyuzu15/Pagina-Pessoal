@@ -1,0 +1,143 @@
+/* Tela de introdução */
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: opacity 1s ease-out;
+}
+
+.intro.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-name {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: scaleUp 1.5s ease-out;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilos gerais */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: black;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Esconde o container até a intro acabar */
+.container.hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    padding: 2rem;
+    border: 1px solid #444;
+}
+
+.sidebar h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.role {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+}
+
+/* Menu */
+.menu a {
+    display: block;
+    margin-bottom: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    opacity: 0.7;
+}
+
+/* Conteúdo das seções */
+.content {
+    width: 75%;
+    position: relative;
+}
+
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.section.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-card {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+}

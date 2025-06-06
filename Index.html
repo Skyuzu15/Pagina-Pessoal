@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seu Portfólio</title>
+    <link rel="stylesheet" href="CSS/Style.css" />
+</head>
+
+<body>
+
+    <!-- Tela de introdução -->
+    <div class="intro">
+
+        <h1 class="intro-name">Marlon Vinicius</h1>
+
+    </div>
+
+    <!-- Tela principal escondida no início -->
+    <div class="container hidden">
+
+        <aside class="sidebar">
+
+            <h1>Marlon Vinicius</h1>
+
+            <p class="role">Designer & Developer</p>
+
+            <nav class="menu">
+                <a href="#" data-target="projects">Projects</a>
+                <a href="#" data-target="info">Info</a>
+                <a href="#" data-target="contact">Contact</a>
+                <a href="#" data-target="faq">FAQ</a>
+                <a href="#" data-target="copycats">Copycats</a>
+                <a href="#" data-target="habilidades">Habilidades</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="projects" class="section active">
+                <h2>Projetos</h2>
+
+                <div class="project-card">
+
+                    <h3>Meu Portfólio</h3>
+                    <p>Este é o site que você está navegando agora. Desenvolvido com HTML, CSS e JavaScript puro</p>
+                    <a href="https://github.com/Skyuzu15/Pagina-Pessoal" target="_blank">Ver no GitHub</a>
+
+                </div>
+
+                <div class="project-card">
+
+                    <h3>Jogo de Aventura</h3>
+                    <p>Um jogo de aventura em texto baseado em decisões, onde o jogador explora uma ilha misteriosa. Desenvolvido em PHP.</p>
+                    <a href="https://github.com/Skyuzu15/text-Adventure" target="_blank">Ver no GitHub</a>
+                    
+                </div>
+
+            </section>
+            
+            <section id="info" class="section hidden">Seção de Informações</section>
+            <section id="contact" class="section hidden">Seção de Contato</section>
+            <section id="faq" class="section hidden">Perguntas Frequentes</section>
+            <section id="copycats" class="section hidden">Copycats</section>
+        </main>
+
+    </div>
+
+    <script src="JavaScript/JavaScript.js"></script>
+</body>
+</html>
