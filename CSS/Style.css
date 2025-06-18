@@ -238,3 +238,58 @@ body.light-theme .bio {
   transform: translateY(20px);
   pointer-events: none;
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .sidebar h1 {
+    font-size: 1.5rem;
+  }
+
+  .role {
+    margin-bottom: 1rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .menu a {
+    margin: 0;
+  }
+
+  .content {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .section {
+    position: relative;
+    padding: 1rem;
+  }
+
+  .bio {
+    position: static;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  #toggleTheme {
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+  }
+}
