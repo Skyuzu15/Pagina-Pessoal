@@ -282,14 +282,18 @@ body.light-theme .bio {
   }
 
   .bio {
-    position: static;
-    margin-top: 2rem;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.8rem;
+    border-radius: 0.6rem;
   }
 
   #toggleTheme {
     top: 10px;
     right: 10px;
     font-size: 14px;
+  }
+
+  body.light-theme .bio {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
