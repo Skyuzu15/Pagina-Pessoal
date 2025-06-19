@@ -133,6 +133,10 @@ body.light-theme .menu a {
   pointer-events: auto;
 }
 
+.section.hidden {
+  display: none;
+}
+
 /* Project cards */
 .project-card {
   background-color: var(--card-dark);
@@ -215,7 +219,9 @@ body.light-theme #toggleTheme:hover {
   border: none;
 }
 
-/* Bio discreta no canto inferior direito */
+/* === BIO: Visível apenas na Home === */
+
+/* Desktop */
 .bio {
   position: absolute;
   bottom: 2rem;
@@ -227,6 +233,7 @@ body.light-theme #toggleTheme:hover {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  display: block;
 }
 
 body.light-theme .bio {
@@ -237,26 +244,64 @@ body.light-theme .bio {
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
+  display: none;
 }
 
+/* Para tablets */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 30%;
+    padding: 1.5rem;
+  }
+  
+  .content {
+    width: 70%;
+  }
+  
+  .sidebar h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  /* Permitir scroll no mobile */
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  /* Intro responsiva */
+  .intro-name {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  /* Container principal */
   .container {
     flex-direction: column;
     height: auto;
+    min-height: 100vh;
   }
 
   .sidebar {
     width: 100%;
     padding: 1rem;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: auto;
   }
 
   .sidebar h1 {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .role {
+    font-size: 0.8rem;
     margin-bottom: 1rem;
   }
 
@@ -264,36 +309,192 @@ body.light-theme .bio {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 0;
   }
 
   .menu a {
     margin: 0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  body.light-theme .menu a {
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .content {
     width: 100%;
-    padding: 1rem;
+    position: relative;
+    min-height: calc(100vh - 160px);
   }
 
   .section {
     position: relative;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: auto;
   }
 
-  .bio {
+  .section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+   /* Project cards */
+  .project-card {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .project-card a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 188, 212, 0.1);
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  /* Seções de texto */
+  #info p, #contact p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  #contact ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  #contact li {
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+
+  body.light-theme #contact li {
     background-color: rgba(0, 0, 0, 0.05);
-    padding: 0.8rem;
-    border-radius: 0.6rem;
   }
 
-  #toggleTheme {
-    top: 10px;
-    right: 10px;
-    font-size: 14px;
+  #contact a {
+    color: #00bcd4;
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  #habilidades ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  #habilidades li {
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+
+  body.light-theme #habilidades li {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Seção Home - deve mostrar a bio */
+  #home.section.active ~ .bio,
+  #home.section.active + .bio,
+  .container #home.section.active ~ .bio {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    display: block;
+  }
+
+  .bio.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
   }
 
   body.light-theme .bio {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  #toggleTheme {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  #themeText {
+    display: none;
   }
 }
+
+/* Para dispositivos muito pequenos */
+@media (max-width: 480px) {
+  .intro-name {
+    font-size: 1.5rem;
+  }
+  
+  .sidebar {
+    padding: 0.8rem;
+  }
+  
+  .sidebar h1 {
+    font-size: 1.3rem;
+  }
+  
+  .section {
+    padding: 1rem 0.8rem;
+  }
+  
+  .section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .menu a {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .bio {
+    margin: 0.8rem;
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+
